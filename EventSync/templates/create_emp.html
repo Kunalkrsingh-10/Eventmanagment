@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Insert New Employee Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        /* General body styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://images.pexels.com/photos/707582/pexels-photo-707582.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-repeat: no-repeat;
+        }
+
+        /* Container styling */
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            max-width: 100%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Form title styling */
+        .form-title {
+            text-align: center;
+            font-size: 26px;
+            margin-bottom: 30px;
+            color: #4CAF50;
+        }
+
+        /* Form group styling */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Label styling */
+        label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        /* Input field styling */
+        input[type="text"], 
+        input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 15px;
+            transition: border 0.3s ease;
+        }
+
+        /* Focus effects on input */
+        input[type="text"]:focus, 
+        input[type="email"]:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+            outline: none;
+        }
+
+        /* Button styling */
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Button hover effect */
+        .btn:hover {
+            background-color: #45a049;
+            box-shadow: 0 6px 12px rgba(76, 175, 80, 0.2);
+        }
+
+        /* Small text below input */
+        small {
+            display: block;
+            font-size: 12px;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        /* Form responsiveness */
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            .form-title {
+                font-size: 22px;
+            }
+        }
+
+        /* Hover effect for container */
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="form-title">Insert New Employee Data</h2>
+        <form action="/create_emp/" method="post"> 
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="emp_name" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" name="emp_email" id="email" placeholder="Enter email" required>
+                <small>We'll never share your email with anyone else.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="mob_no">Contact Number</label>
+                <input type="text" name="mob_no" id="mob_no" placeholder="Enter your contact number" required>
+            </div>
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
