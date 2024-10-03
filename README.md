@@ -5,7 +5,7 @@ This project demonstrates about  Django signals with CRUD operations. It include
 ## How Django Signals Are Integrated
 
 1. **Synchronous Signal Execution**:
-    - .
+    - When an employee record is created or updated, the post_save signal is triggered **synchronously**, meaning it runs in the same flow as the main request
 
 2. **Same Thread Execution**:
     - The signal handler runs in the same thread as the view. We print the thread name in both the view and the signal handler to demonstrate that they share the same thread.
@@ -29,17 +29,7 @@ This project demonstrates about  Django signals with CRUD operations. It include
 2. **Create a virtual environment**:
     ```bash
     python -m venv myenv
-    source myenv/bin/activate  # On Windows use `myenv\Scripts\activate`
+    source myenv/bin/activate  
     ```
 
 
-## Application Structure
-
-- `views.py`: Contains the CRUD operations for managing employees.
-- `signals.py`: Contains the signal handlers (`post_save`, `post_delete`) for employee creation, update, and deletion.
-- `models.py`: Defines the `employees_info` model.
-- `templates`: Contains HTML files for creating, updating, and retrieving employee records.
-
-
-
-)
