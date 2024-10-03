@@ -22,8 +22,8 @@ This project demonstrates about  Django signals with CRUD operations. It include
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/Kunalkrsingh-10/django-crud-signals.git
-    cd django-crud-signals
+    git clone https://github.com/Kunalkrsingh-10/Eventmanagment.git
+    cd Eventmanagment
     ```
 
 2. **Create a virtual environment**:
